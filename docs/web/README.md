@@ -336,6 +336,118 @@ Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔�
 |:-------|-------:|:--------:|
 | 单元格 | 单元格 |  单元格  |
 | 单元格 | 单元格 |  单元格  |
+
+## Git
+### tortoisegit(小乌龟)
+这个的安装和使用教程个人推荐这个网站：
+[小乌龟详解](https://www.cnblogs.com/xiuxingzhe/p/9312929.html)
+### Git Bash
+#### 安装配置
+[傻瓜式安装](https://gitforwindows.org/)
+#### 检查git是否安装OK
+键盘Ctrl+r，然后在弹出框中出入cdm，弹出如下界面，输入git，回车,显示出git的信息则安装成功
+#### 环境配置
+1.git安装好去GitHub上注册一个账号，注册好后，点击桌面上的Git Bash快捷图标，我们要用账号进行环境配置
+2.在Git Bash
+```
+# 配置用户名
+git config --global user.name "username"    //（ "username"是自己的账户名，）
+# 配置邮箱
+git config --global user.email "username@email.com"     //("username@email.com"注册账号时用的邮箱)
+```
+3.生成ssh
+完成上面的操作后，在命令框中输入以下命令，
+```
+ssh-keygen -t rsa
+```
+
+然后连敲三次回车键，结束后去系统盘目录下（一般在 C:\Users\你的用户名.ssh）(mac: /Users/用户/.ssh）查看是否有。ssh文件夹生成，此文件夹中以下两个文件
+一般会生成，id_rsa和id_rsa.pub文件
+
+将ssh文件夹中的公钥（ id_rsa.pub）里面的内容全部复制，添加到GitHub管理平台中，在GitHub的个人账户的设置中找到如下界面
+![alt ssh](/ssh.png "ssh")
+title随便起一个，将公钥（ id_rsa.pub）文件中内容复制粘贴到key中，然后点击Ass SSH key就好啦
+4.测试一下配置是否成功，在Git Bush命令框（就是刚才配置账号和邮箱的命令框）中继续输入以下命令，回车
+```
+ssh -T git@github.com
+```
+### 命令
+#### 获得Git仓库
+```
+git clone "github项目的ssh地址"
+```
+#### git status
+通常提交前先检查下修改了什么内容，当前Git目录下各文件的状态。
+```
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+#### git add
+git add可以添加文件或者目录，也可以使用通配符。比如：
+```
+git add Readme.md    # add file only
+git add *.cpp        # add all cpp files
+git add /home/code/  # add all files in /home/code
+```
+#### git diff
+git diff可以查看当前目录的所有修改。
+提交之前，还是单独确认下处于staged状态的文件有哪些，并保证修改正确。在实际应用中，可能还需要使用git diff导出PATCH做代码走读。
+可以使用git diff --staged或git diff --cached查看staged与上次提交快照之间的区别。
+#### git commit
+提交前需慎重。直接调用git commit会弹出编辑器，输入提交日志（如果是多行日志，建议使用）。
+针对单行日志提交的情况，可以使用如下命令：git commit -m "add readme"。
+还有一种快捷的提交方式，直接跳过stage缓存区，直接提交当前目录下的所有修改git commit -a（使用这个命令前建议确认下当前目录的修改是否正确、必须）。
+#### git rm
+git rm会把文件从当前目录删除（不会保存删除的文件）。如果需要从Git仓库中删除，但保留在当前工作目录中，亦即从跟踪清单中删除，可以使用git rm --cached readme.md。
+#### 远程仓库
+可以使用git remote查看当前的远程库。
+git remote -v可以显示对应的克隆地址。（对于多个远程仓库很有用）
+##### 添加远程仓库
+git remote add [short_name] [url]可以添加新的远程仓库。
+##### 从远程仓库抓取数据
+git fetch [remote-name]可以从远程仓库抓取数据到本地。
+也可以使用git pull
+##### 推送数据到远程仓库
+git push [remote_name] [branch_name]
+默认使用origin和master。
+##### 查看远程仓库信息
+git remote show origin
+##### 远程仓库的删除和重命名
+git remote rename [old_name] [new_name]
+git remote rm [remote_name]
+### Git分支
+git分支是轻量级的，速度很快，仅记录索引信息。
+
+#### 显示所有分支
+使用git branch可显示当前所有分支。
+可以使用--merged和--no-merged查看已经合并、未合并的分支。
+
+#### 创建及切换分支
+可以使用下面命令直接切换并创建分支
+git checkout -b testing
+等价于
+```
+$ git branch testing    # 创建testing 分支
+$ git checkout testing  # 切换到testing分支
+```
+注意切换分支时请保持工作目录没有未提交的修改。Git鼓励使用分支，处理完问题之后合并分支即可。
+#### 分支合并
+将hotfix分支合并到master（主分支）上，需要通过下面命令：
+```
+$ git checkout master
+$ git merge hotfix
+```
+合并之后可以使用git branch -d hotfix删除分支。
+如果合并时存在冲突，需要手工修改。
 ## HTML
 ## CSS
 ## JS
