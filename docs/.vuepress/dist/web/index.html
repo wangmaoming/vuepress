@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Web | 王茂铭的博客</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.c4b11502.css" as="style"><link rel="preload" href="/assets/js/app.9034dff1.js" as="script"><link rel="preload" href="/assets/js/2.7191eb0b.js" as="script"><link rel="preload" href="/assets/js/12.45ba0c88.js" as="script"><link rel="prefetch" href="/assets/js/10.c26e20ec.js"><link rel="prefetch" href="/assets/js/11.107e7b1f.js"><link rel="prefetch" href="/assets/js/3.8d6efa30.js"><link rel="prefetch" href="/assets/js/4.c7c9385d.js"><link rel="prefetch" href="/assets/js/5.bc0d4c90.js"><link rel="prefetch" href="/assets/js/6.2738d908.js"><link rel="prefetch" href="/assets/js/7.e9f756cb.js"><link rel="prefetch" href="/assets/js/8.9b57d233.js"><link rel="prefetch" href="/assets/js/9.22d507df.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4b11502.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="王茂铭的博客" class="logo"> <span class="site-name can-hide">王茂铭的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  Life
+</a></div><div class="nav-item"><a href="/interest/" class="nav-link">
+  Interest
+</a></div><div class="nav-item"><a href="/web/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Web
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link">
+  IOS
+</a></div><div class="nav-item"><a href="/server/" class="nav-link">
+  Server
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  Life
+</a></div><div class="nav-item"><a href="/interest/" class="nav-link">
+  Interest
+</a></div><div class="nav-item"><a href="/web/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Web
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link">
+  IOS
+</a></div><div class="nav-item"><a href="/server/" class="nav-link">
+  Server
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Web</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/#markdown" class="sidebar-link">Markdown</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/web/#标题" class="sidebar-link">标题</a></li><li class="sidebar-sub-header"><a href="/web/#段落" class="sidebar-link">段落</a></li><li class="sidebar-sub-header"><a href="/web/#列表" class="sidebar-link">列表</a></li><li class="sidebar-sub-header"><a href="/web/#区块" class="sidebar-link">区块</a></li><li class="sidebar-sub-header"><a href="/web/#代码" class="sidebar-link">代码</a></li><li class="sidebar-sub-header"><a href="/web/#链接" class="sidebar-link">链接</a></li><li class="sidebar-sub-header"><a href="/web/#图片" class="sidebar-link">图片</a></li><li class="sidebar-sub-header"><a href="/web/#表格" class="sidebar-link">表格</a></li></ul></li><li><a href="/web/#html" class="sidebar-link">HTML</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/#css" class="sidebar-link">CSS</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/#js" class="sidebar-link">JS</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/#vue基础" class="sidebar-link">Vue基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/#vue-js是什么" class="sidebar-link">Vue.js是什么</a></li><li class="sidebar-sub-header"><a href="/web/#vue实例" class="sidebar-link">Vue实例</a></li><li class="sidebar-sub-header"><a href="/web/#vue常用指令" class="sidebar-link">vue常用指令</a></li><li class="sidebar-sub-header"><a href="/web/#生命周期函数-钩子函数" class="sidebar-link">生命周期函数|钩子函数</a></li><li class="sidebar-sub-header"><a href="/web/#vue组件化应用构建" class="sidebar-link">vue组件化应用构建</a></li><li class="sidebar-sub-header"><a href="/web/#slot插槽" class="sidebar-link">SLOT插槽</a></li><li class="sidebar-sub-header"><a href="/web/#vue的路由设置" class="sidebar-link">vue的路由设置</a></li><li class="sidebar-sub-header"><a href="/web/#axios的使用" class="sidebar-link">axios的使用</a></li></ul></li><li><a href="/web/#vue技术点" class="sidebar-link">Vue技术点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/#vue导出json数据到excel表格" class="sidebar-link">Vue导出json数据到Excel表格</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="web"><a href="#web" class="header-anchor">#</a> Web</h1> <h2 id="markdown"><a href="#markdown" class="header-anchor">#</a> Markdown</h2> <h3 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h3> <p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
+Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。
+Markdown 编写的文档后缀为 .md, .markdown。</p> <h3 id="标题"><a href="#标题" class="header-anchor">#</a> 标题</h3> <h4 id="markdown-标题有两种格式。"><a href="#markdown-标题有两种格式。" class="header-anchor">#</a> Markdown 标题有两种格式。</h4> <h5 id="使用-和-标记一级和二级标题"><a href="#使用-和-标记一级和二级标题" class="header-anchor">#</a> 使用 = 和 - 标记一级和二级标题</h5> <p>= 和 - 标记语法格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>我展示的是一级标题
+=================
+我展示的是二级标题
+-----------------
+</code></pre></div><p>使用 # 号标记
+使用 # 号可表示 1-6 级标题，一级标题对应一个 # 号，二级标题对应两个 # 号，以此类推。</p> <div class="language- extra-class"><pre class="language-text"><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre></div><h3 id="段落"><a href="#段落" class="header-anchor">#</a> 段落</h3> <p>Markdown 段落没有特殊的格式，直接编写文字就好，段落的换行是使用两个以上空格加上回车。
+当然也可以在段落后面使用一个空行来表示重新开始一个段落。</p> <h4 id="字体"><a href="#字体" class="header-anchor">#</a> 字体</h4> <p>Markdown 可以使用以下几种字体：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">*</span>斜体文本<span class="token operator">*</span>
+_斜体文本_
+<span class="token operator">**</span>粗体文本<span class="token operator">**</span>
+__粗体文本__
+<span class="token operator">**</span><span class="token operator">*</span>粗斜体文本<span class="token operator">**</span><span class="token operator">*</span>
+___粗斜体文本___
+</code></pre></div><p><em>斜体文本</em> <em>斜体文本</em> <strong>粗体文本</strong> <strong>粗体文本</strong> <em><strong>粗斜体文本</strong></em> <em><strong>粗斜体文本</strong></em></p> <h4 id="分隔线"><a href="#分隔线" class="header-anchor">#</a> 分隔线</h4> <p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">**</span><span class="token operator">*</span>
+
+<span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span>
+
+<span class="token operator">**</span><span class="token operator">**</span><span class="token operator">*</span>
+
+<span class="token operator">-</span> <span class="token operator">-</span> <span class="token operator">-</span>
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+</code></pre></div><hr> <hr> <hr> <hr> <hr> <h4 id="删除线"><a href="#删除线" class="header-anchor">#</a> 删除线</h4> <p>如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线 ~~ 即可，实例如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token constant">RUNOOB</span><span class="token punctuation">.</span><span class="token constant">COM</span>
+<span class="token constant">GOOGLE</span><span class="token punctuation">.</span><span class="token constant">COM</span>
+<span class="token operator">~</span><span class="token operator">~</span><span class="token constant">BAIDU</span><span class="token punctuation">.</span><span class="token constant">COM</span><span class="token operator">~</span><span class="token operator">~</span>
+</code></pre></div><p>RUNOOB.COM
+GOOGLE.COM
+<s>BAIDU.COM</s></p> <h4 id="下划线"><a href="#下划线" class="header-anchor">#</a> 下划线</h4> <p>下划线可以通过 HTML 的 u 标签来实现：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// &lt;u&gt;带下划线文本&lt;/u&gt;</span>
+</code></pre></div><p><u>带下划线文本</u></p> <h4 id="脚注"><a href="#脚注" class="header-anchor">#</a> 脚注</h4> <p>脚注是对文本的补充说明。
+Markdown 脚注的格式如下:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">[</span><span class="token operator">^</span>要注明的文本<span class="token punctuation">]</span>
+</code></pre></div><p>以下实例演示了脚注的用法：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>创建脚注格式类似这样 <span class="token punctuation">[</span><span class="token operator">^</span><span class="token constant">RUNOOB</span><span class="token punctuation">]</span>。
+
+<span class="token punctuation">[</span><span class="token operator">^</span><span class="token constant">RUNOOB</span><span class="token punctuation">]</span><span class="token operator">:</span> 菜鸟教程 <span class="token operator">--</span> 学的不仅是技术，更是梦想！！！
+</code></pre></div><p>创建脚注格式类似这样 [^RUNOOB]。</p> <p>[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p> <h3 id="列表"><a href="#列表" class="header-anchor">#</a> 列表</h3> <p>Markdown 支持有序列表和无序列表。</p> <p>无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">*</span> 第一项
+<span class="token operator">*</span> 第二项
+<span class="token operator">*</span> 第三项
+
+<span class="token operator">+</span> 第一项
+<span class="token operator">+</span> 第二项
+<span class="token operator">+</span> 第三项
+
+
+<span class="token operator">-</span> 第一项
+<span class="token operator">-</span> 第二项
+<span class="token operator">-</span> 第三项
+</code></pre></div><p>效果如下：</p> <ul><li>第一项</li> <li>第二项</li> <li>第三项</li></ul> <ul><li>第一项</li> <li>第二项</li> <li>第三项</li></ul> <ul><li>第一项</li> <li>第二项</li> <li>第三项</li></ul> <p>有序列表使用数字并加上 . 号来表示，如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">1.</span> 第一项
+<span class="token number">2.</span> 第二项
+<span class="token number">3.</span> 第三项
+</code></pre></div><ol><li>第一项</li> <li>第二项</li> <li>第三项</li></ol> <h4 id="列表嵌套"><a href="#列表嵌套" class="header-anchor">#</a> 列表嵌套</h4> <p>列表嵌套只需在子列表中的选项添加四个空格即可：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token number">1.</span> 第一项：
+    <span class="token operator">-</span> 第一项嵌套的第一个元素
+    <span class="token operator">-</span> 第一项嵌套的第二个元素
+<span class="token number">2.</span> 第二项：
+    <span class="token operator">-</span> 第二项嵌套的第一个元素
+    <span class="token operator">-</span> 第二项嵌套的第二个元素
+</code></pre></div><ol><li>第一项：
+<ul><li>第一项嵌套的第一个元素</li> <li>第一项嵌套的第二个元素</li></ul></li> <li>第二项：
+<ul><li>第二项嵌套的第一个元素</li> <li>第二项嵌套的第二个元素</li></ul></li></ol> <h3 id="区块"><a href="#区块" class="header-anchor">#</a> 区块</h3> <p>Markdown 区块引用是在段落开头使用 &gt; 符号 ，然后后面紧跟一个空格符号：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&gt;</span> 区块引用
+<span class="token operator">&gt;</span> 菜鸟教程
+<span class="token operator">&gt;</span> 学的不仅是技术更是梦想
+</code></pre></div><blockquote><p>区块引用
+菜鸟教程
+学的不仅是技术更是梦想</p></blockquote> <p>另外区块是可以嵌套的，一个 &gt; 符号是最外层，两个 &gt; 符号是第一层嵌套，以此类推：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&gt;</span> 最外层
+<span class="token operator">&gt;</span> <span class="token operator">&gt;</span> 第一层嵌套
+<span class="token operator">&gt;</span> <span class="token operator">&gt;</span> <span class="token operator">&gt;</span> 第二层嵌套
+</code></pre></div><blockquote><p>最外层</p> <blockquote><p>第一层嵌套</p> <blockquote><p>第二层嵌套</p></blockquote></blockquote></blockquote> <h4 id="区块中使用列表"><a href="#区块中使用列表" class="header-anchor">#</a> 区块中使用列表</h4> <p>区块中使用列表实例如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&gt;</span> 区块中使用列表
+<span class="token operator">&gt;</span> <span class="token number">1.</span> 第一项
+<span class="token operator">&gt;</span> <span class="token number">2.</span> 第二项
+<span class="token operator">&gt;</span> <span class="token operator">+</span> 第一项
+<span class="token operator">&gt;</span> <span class="token operator">+</span> 第二项
+<span class="token operator">&gt;</span> <span class="token operator">+</span> 第三项
+</code></pre></div><blockquote><p>区块中使用列表</p> <ol><li>第一项</li> <li>第二项</li></ol> <ul><li>第一项</li> <li>第二项</li> <li>第三项</li></ul></blockquote> <h4 id="列表中使用区块"><a href="#列表中使用区块" class="header-anchor">#</a> 列表中使用区块</h4> <p>如果要在列表项目内放进区块，那么就需要在 &gt; 前添加四个空格的缩进。</p> <p>区块中使用列表实例如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">*</span> 第一项
+    <span class="token operator">&gt;</span> 菜鸟教程
+    <span class="token operator">&gt;</span> 学的不仅是技术更是梦想
+<span class="token operator">*</span> 第二项
+</code></pre></div><ul><li>第一项
+<blockquote><p>菜鸟教程
+学的不仅是技术更是梦想</p></blockquote></li> <li>第二项</li></ul> <h3 id="代码"><a href="#代码" class="header-anchor">#</a> 代码</h3> <p>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（`），例如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// `printf()` 函数</span>
+</code></pre></div><p><code>printf()</code> 函数
+代码区块使用 4 个空格或者一个制表符（Tab 键）。
+你也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）：</p> <h3 id="链接"><a href="#链接" class="header-anchor">#</a> 链接</h3> <p>链接使用方法如下：</p> <div class="language- extra-class"><pre class="language-text"><code>[链接名称](链接地址)
+
+或者
+
+&lt;链接地址&gt;
+这是一个链接 [菜鸟教程](https://www.runoob.com)
+</code></pre></div><p>这是一个链接 <a href="https://www.runoob.com" target="_blank" rel="noopener noreferrer">菜鸟教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>直接使用链接地址：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;https://www.runoob.com&gt;
+</code></pre></div><p><a href="https://www.runoob.com" target="_blank" rel="noopener noreferrer">https://www.runoob.com<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h4 id="高级链接"><a href="#高级链接" class="header-anchor">#</a> 高级链接</h4> <p>我们可以通过变量来设置一个链接，变量赋值在文档末尾进行：</p> <div class="language- extra-class"><pre class="language-text"><code>这个链接用 1 作为网址变量 [Google][1]
+这个链接用 runoob 作为网址变量 [Runoob][runoob]
+然后在文档的结尾为变量赋值（网址）
+
+  [1]: http://www.google.com/
+  [runoob]: http://www.runoob.com/
+</code></pre></div><p>这个链接用 1 作为网址变量 <a href="http://www.google.com/" target="_blank" rel="noopener noreferrer">Google<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+这个链接用 runoob 作为网址变量 <a href="http://www.runoob.com/" target="_blank" rel="noopener noreferrer">Runoob<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+然后在文档的结尾为变量赋值（网址）</p> <h3 id="图片"><a href="#图片" class="header-anchor">#</a> 图片</h3> <p>Markdown 图片语法格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>![alt 属性文本](图片地址)
+
+![alt 属性文本](图片地址 &quot;可选标题&quot;)
+</code></pre></div><p>开头一个感叹号 !
+接着一个方括号，里面放上图片的替代文字
+接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 'title' 属性的文字。</p> <div class="language- extra-class"><pre class="language-text"><code>![RUNOOB 图标](http://static.runoob.com/images/runoob-logo.png)
+
+![RUNOOB 图标](http://static.runoob.com/images/runoob-logo.png &quot;RUNOOB&quot;)
+</code></pre></div><p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标"></p> <p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB"></p> <p>当然，你也可以像网址那样对图片网址使用变量:</p> <div class="language- extra-class"><pre class="language-text"><code>这个链接用 1 作为网址变量 [RUNOOB][1].
+然后在文档的结尾为变量赋值（网址）
+
+[1]: http://static.runoob.com/images/runoob-logo.png
+</code></pre></div><p>这个链接用 1 作为网址变量 <a href="http://www.google.com/" target="_blank" rel="noopener noreferrer">RUNOOB<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.
+然后在文档的结尾为变量赋值（网址）</p> <p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <img> 标签。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;img src=&quot;http://static.runoob.com/images/runoob-logo.png&quot; width=&quot;50%&quot;&gt;
+</code></pre></div><img src="http://static.runoob.com/images/runoob-logo.png" width="50%"> <h3 id="表格"><a href="#表格" class="header-anchor">#</a> 表格</h3> <p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。</p> <p>语法格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
+</code></pre></div><table><thead><tr><th>表头</th> <th>表头</th></tr></thead> <tbody><tr><td>单元格</td> <td>单元格</td></tr> <tr><td>单元格</td> <td>单元格</td></tr></tbody></table> <p>对齐方式</p> <p>我们可以设置表格的对齐方式：</p> <p>-: 设置内容和标题栏居右对齐。
+:- 设置内容和标题栏居左对齐。
+:-: 设置内容和标题栏居中对齐。</p> <div class="language- extra-class"><pre class="language-text"><code>| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+</code></pre></div><table><thead><tr><th style="text-align:left;">左对齐</th> <th style="text-align:right;">右对齐</th> <th style="text-align:center;">居中对齐</th></tr></thead> <tbody><tr><td style="text-align:left;">单元格</td> <td style="text-align:right;">单元格</td> <td style="text-align:center;">单元格</td></tr> <tr><td style="text-align:left;">单元格</td> <td style="text-align:right;">单元格</td> <td style="text-align:center;">单元格</td></tr></tbody></table> <h2 id="html"><a href="#html" class="header-anchor">#</a> HTML</h2> <h2 id="css"><a href="#css" class="header-anchor">#</a> CSS</h2> <h2 id="js"><a href="#js" class="header-anchor">#</a> JS</h2> <h2 id="vue基础"><a href="#vue基础" class="header-anchor">#</a> Vue基础</h2> <h3 id="vue-js是什么"><a href="#vue-js是什么" class="header-anchor">#</a> Vue.js是什么</h3> <blockquote><p>vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p></blockquote> <h3 id="vue实例"><a href="#vue实例" class="header-anchor">#</a> Vue实例</h3> <p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统
+1、在文件中引入vue.js，下面两种方式选择其中一种</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script type=&quot;text/javascript&quot; src=&quot;../vue.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+</code></pre></div><p>2、建立简单的vue实例对象</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;
+	//调用vue中的数据
+	&lt;h1&gt;{{message}}&lt;/h1&gt;
+	//下面的两种书写方式结果相同
+	&lt;button v-on:click=&quot;click()&quot;&gt;click&lt;/button&gt;
+	&lt;button @click=&quot;click()&quot;&gt;click01&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+		var ve=	new Vue({
+				el:'#app',
+				data:{
+					message:'hello',
+				},
+				methods:{
+					click:function(){
+						alert(&quot;你好，世界&quot;);
+					}
+				}
+			});
+&lt;/script&gt;
+
+</code></pre></div><h3 id="vue常用指令"><a href="#vue常用指令" class="header-anchor">#</a> vue常用指令</h3> <p>1、v-on：绑定事件监听器，事件的类型由参数决定
+例如：v-on：事件名称
+或者@事件名称</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>click()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>click()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>2、v-if/v-else-if/v-else判断指令：根据表达式的值，进行渲染</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;
+			//isshow为true时，标签内的内容显示到页面
+			&lt;h1 v-if=&quot;isshow&quot;&gt;{{isshow}}ok&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+			new Vue({
+				el:'#app',
+				data:{
+					message:'hello',
+					isshow:true,
+				},
+				methods:{
+					click:function(){
+						alert(&quot;你好，世界&quot;);
+					}
+				}
+			});
+&lt;/script&gt;
+
+</code></pre></div><p>3、v-model：数据绑定指令（一般为表单输入绑定）</p> <div class="language- extra-class"><pre class="language-text"><code>//v-model 指令在表单&lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt; 元素上创建双向数据绑定
+&lt;input type=&quot;text&quot; v-model=&quot;message&quot; /&gt;{{message}}
+</code></pre></div><p>4、v-for：循环（可以多层嵌套显示和java中的for循环原理一致）
+v-for格式：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;li v-for=“item in items”&gt;{{item}} &lt;/ li&gt;
+</code></pre></div><p>其中：item是被迭代数组元素的别名
+items是源数据数组
+使用 item in items 的特殊格式语法</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;demo&quot;&gt;
+	&lt;ul&gt;
+		&lt;li v-for=&quot;item in items&quot;&gt;{{item}}&lt;/li&gt;
+		&lt;li v-for=&quot;item in arr1&quot;&gt;{{item}}&lt;/li&gt;
+		&lt;li v-for=&quot;item in arr1.a&quot;&gt;{{item}}&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+			new Vue({
+				el:'#demo',
+				data:{
+					items:[23,23,344,45],
+					arr1:{&quot;a&quot;:[1,2,3],&quot;b&quot;:[2,2,3]},
+				},
+				methods:{
+				}
+			});
+&lt;/script&gt;
+</code></pre></div><p>5、v-bind：动态绑定属性
+使用格式
+v-bind:属性名=“data数据对象中的值”
+简写
+：属性名=“data数据对象中的值”</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;styple&gt;
+.child{
+	width: 50px;
+	height: 50px;
+	background-color: gray;
+	color: black;
+	}
+&lt;/style&gt;
+&lt;div id=&quot;app&quot;&gt;
+	&lt;img v-bind:src=&quot;img&quot; /&gt; //动态绑定了imges属性，img改变了图片，那么img标签也会改变
+	&lt;div :class=&quot;{'child':isshow}&quot;&gt;div6&lt;/div&gt; //div区域的显示根据isshow的值来判定
+	
+&lt;/div&gt;
+&lt;script&gt;
+	new Vue({
+				el:'#app',
+				data:{
+				isshow:true,
+				img:'111.png',
+				}
+			})	
+&lt;/script&gt;
+</code></pre></div><h3 id="生命周期函数-钩子函数"><a href="#生命周期函数-钩子函数" class="header-anchor">#</a> 生命周期函数|钩子函数</h3> <p>1、生命周期函数</p> <div class="language- extra-class"><pre class="language-text"><code>beforeCreate
+
+在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。
+
+created
+
+实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。
+
+beforeMount
+
+在挂载开始之前被调用：相关的 render 函数首次被调用。
+
+mounted
+
+el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
+
+beforeUpdate
+
+数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。 你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。
+
+updated
+
+由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。
+
+当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。
+
+该钩子在服务器端渲染期间不被调用。
+
+beforeDestroy
+
+实例销毁之前调用。在这一步，实例仍然完全可用。
+
+destroyed
+
+Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。
+</code></pre></div><p><img src="/lifecycle.png" alt="alt 生命周期" title="生命周期"></p> <p>2、下面用一个生命周期函数演示的实例</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;demo&quot;&gt;
+			&lt;h1&gt;{{message}}&lt;/h1&gt;
+			&lt;button @click=&quot;changemessage()&quot;&gt;changemessage&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+			var ve =new Vue({
+					el:'#demo',
+					data:{
+						message:'vue生命周期',
+						
+					},
+					beforeCreate:function(){
+						console.group(&quot;------------beforecreate-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					created:function(){
+						console.group(&quot;------------created-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					beforeMount:function(){
+						console.group(&quot;------------beforemount-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					mounted:function(){
+						console.group(&quot;------------mounted-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					beforeUpdate:function(){
+						console.group(&quot;------------beforeupdate-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					updated:function(){
+						console.group(&quot;------------updated-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					beforeDestroy:function(){
+						console.group(&quot;------------destotry-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					destroyed:function(){
+						console.group(&quot;------------destroyed-----------&quot;)
+						console.log('el:'+this.$el)
+						console.log('data:'+this.$data)
+						console.log('message:'+this.message)
+					},
+					methods:{
+						changemessage:function(){
+							this.message='666'
+						}
+					}
+				});
+//销毁是在实例外面调用的
+				ve.$destroy()
+</code></pre></div><p>实际效果
+<img src="/lifecycleshow01.png" alt="alt 生命周期实际效果" title="生命周期实际效果">
+点击changemessage按钮
+<img src="/lifecycleshow02.png" alt="alt 生命周期实际效果" title="生命周期实际效果"></p> <h3 id="vue组件化应用构建"><a href="#vue组件化应用构建" class="header-anchor">#</a> vue组件化应用构建</h3> <p>组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。仔细想想，几乎任意类型的应用界面都可以抽象为一个组件树：
+<img src="/components.png.png" alt="alt 组件化" title="组件化">
+1、为什么使用组件？
+使用组件一方面可以不用去直接修改标签，另一方面也会优化页面显示
+注意:组件在实例前面书写
+2、组件注册（全局与局部）</p> <h5 id="先看看全局组件的引用，就拿最常用的全局的暂无数据来举例，看看全局的是如何实现的。"><a href="#先看看全局组件的引用，就拿最常用的全局的暂无数据来举例，看看全局的是如何实现的。" class="header-anchor">#</a> 先看看全局组件的引用，就拿最常用的全局的暂无数据来举例，看看全局的是如何实现的。</h5> <p>（1）首先在components创建一个公共的目录，NoDatas目录里边包含index.vue和index.js,index.vue用来写公共的页面，index.js用来导出这个组件。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+&lt;!-- NoDataWords 可以灵活控制每个页面显示的内容  --&gt;
+&lt;!-- NoDataHeight 可以灵活控制每个页面的高度  --&gt;
+&lt;!-- 如果你的页面都是统一的字体，统一的样式,那就直接在这写死就好了 --&gt;
+    &lt;div class=&quot;NoDataAtAll W100&quot;
+         :style=&quot;{height: NoDataHeight }&quot;&gt;{{NoDataWords}}&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  // 就是基本的父子组件传值
+  props: [&quot;NoDataHeight&quot;, &quot;NoDataWords&quot;],
+  data() {
+    return {};
+  },
+  methods: {}
+};
+&lt;/script&gt;
+&lt;style lang=&quot;scss&quot; scoped&gt;
+.NoDataAtAll {
+  font-size: 14px;
+  color: #909399;
+}
+&lt;/style&gt;
+</code></pre></div><p>(2) 然后就是在index.js中注册该组件</p> <div class="language- extra-class"><pre class="language-text"><code>import NoDataS from './index.vue'
+const noDataLists = {
+    install: function(Vue) {
+        // 注册并获取组件，然后在main.js中引用，在Vue.use()就可以了
+        Vue.component('noDataLists', NoDataS)
+    }
+}
+export default noDataLists
+</code></pre></div><p>(3)在main.js中引入并使用该组件</p> <div class="language- extra-class"><pre class="language-text"><code>import noDataLists from '@/components/NoDatas/index'
+Vue.use(noDataLists);
+</code></pre></div><h5 id="第二种-全局注册组件形式"><a href="#第二种-全局注册组件形式" class="header-anchor">#</a> 第二种 全局注册组件形式</h5> <p><img src="/allzuchezujian01.png" alt="alt 全局注册组件" title="全局注册组件">
+先在main.js里这样写。  然后在App.vue里面 的template模板里 直接使用</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;users&gt;&lt;/users&gt;
+</code></pre></div><p>加载使用即可
+<img src="/allzuchezujian02.png" alt="alt 全局注册组件" title="全局注册组件">
+局部组件引入方法 就是在App.vue里引入。
+<img src="/allzuchezujian03.png" alt="alt 局部注册组件" title="局部注册组件">
+2,.全局注册公共的函数
+公共函数common.js</p> <div class="language- extra-class"><pre class="language-text"><code>const obj={
+    fun1(){
+    },
+    fun2(){
+    },
+    fun3(){
+    }
+}
+export default obj
+</code></pre></div><p>main.js中引入方法</p> <div class="language- extra-class"><pre class="language-text"><code>import common from '.icommon.js'
+Vue.prototype.common=comm
+</code></pre></div><p>其它组件中调用该方法的时候</p> <div class="language- extra-class"><pre class="language-text"><code>this.common.fun1();
+</code></pre></div><h4 id="局部组件-局部组件放在实例中"><a href="#局部组件-局部组件放在实例中" class="header-anchor">#</a> 局部组件:局部组件放在实例中</h4> <p>父子组件可以嵌套使用
+父子组件间作用域相互独立
+子组件只能在父组件的模板中进行调用</p> <p>子组件是父组件细化拆分的过程
+父组件向子组件传值通过props进行</p> <p>下面的示例中包含了父组件向子组件传值的功能</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;box&quot;&gt;
+	&lt;test&gt;
+	&lt;/test&gt;
+&lt;/div&gt;
+&lt;template id='box1'&gt;
+	&lt;div&gt;
+	&lt;input type=&quot;text&quot; v-model=&quot;message&quot; /&gt;
+	&lt;box1 num=&quot;1&quot; txt='yi' :msg=&quot;message&quot;&gt;&lt;/box1&gt;
+	&lt;box1 num=&quot;2&quot; txt='er' :msg=&quot;message&quot;&gt;&lt;/box1&gt;
+	&lt;/div&gt;
+&lt;/template&gt; 
+
+&lt;script&gt;
+var ve = new Vue({
+		el:'#box',
+		data:{
+		},
+		//父級
+		components:{
+			'test':{
+				template:&quot;#box1&quot;,
+				data:function(){
+					return{
+						message:'aaa'
+					}
+				},
+				//子级
+				components:{
+					'box1':{
+						template:&quot;#box2&quot;,
+						//子级想将父级的一个值，作为自己的一个局部变量
+						data:function(){
+							return{
+								mymsg:this.msg
+							}
+						},
+						//计算属性
+						computed:{
+							mymsg1:function(){
+								return this.msg+'!'
+							}
+						},
+						props:[
+							'num','txt','msg'
+						]
+						}
+					}
+				}
+			}
+		})
+&lt;/script&gt;
+</code></pre></div><h4 id="自定义监听事件（子组件向父组件传值）"><a href="#自定义监听事件（子组件向父组件传值）" class="header-anchor">#</a> 自定义监听事件（子组件向父组件传值）</h4> <p>自定义监听事件： $emit()
+传值的过程：
+子组件设定了一个点击事件，点击事件中夹带着传递的值—》通过getval方法将拿到的值赋值给父组件的message—》父组件显示出message值</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;box&quot;&gt;
+			&lt;parent&gt;&lt;/parent&gt;
+&lt;/div&gt;
+	&lt;template id='par'&gt;
+		&lt;div&gt;
+			&lt;h1&gt; 父组件:{{parentmsg}}||{{message}}&lt;/h1&gt;
+			&lt;child @change=&quot;getval&quot;&gt;&lt;/child&gt;
+		&lt;/div&gt;
+	&lt;/template&gt;
+	&lt;template id='child'&gt;
+		&lt;div @click=&quot;fn()&quot;&gt;
+			&lt;h2&gt;子组件:{{childmsg}}&lt;/h2&gt;
+		&lt;/div&gt;
+	&lt;/template&gt;
+&lt;script&gt;
+	var vm = new Vue({
+		el:&quot;#box&quot;,
+		components:{
+			&quot;parent&quot;:{
+				template:'#par',
+				data:function(){
+					return {
+						parentmsg:&quot;父组件的信息&quot;,
+						message:''
+					}
+				},
+				methods:{
+					getval:function(val){
+						this.message = val
+						console.log(val)
+					}
+				},
+				components:{
+					'child':{
+						template:'#child',
+						data:function(){
+							return{
+								childmsg:'子组件的信息'
+							}
+						},
+						methods:{
+							fn:function(){
+								this.$emit('change',this.childmsg)
+							}
+						}
+					}
+				}
+			}
+		}
+	})
+&lt;/script&gt;
+
+</code></pre></div><h3 id="slot插槽"><a href="#slot插槽" class="header-anchor">#</a> SLOT插槽</h3> <p>目的:其目的在于让组件的可扩展性更强,用来混合父组件的内容与子组件自己的模板.
+分为匿名slot和具名slot
+一、slot的作用
+Q: 假如父组件需要在子组件内放一些DOM元素，那么这些DOM是显示呢还是不显示呢？</p> <p>默认情况下是不会显示的，如下图所示，页面并没有显示父组件增加的<span>我是魔鬼</span>  元素内容。那么我执意要加DOM元素到子组件上该怎么实现呢？这就用到了slot插槽，使用slot这个标签可以将父组件放在子组件的内容，放到它想显示的地方</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;  
+  &lt;children&gt;  
+    &lt;span&gt;我是魔鬼&lt;/span&gt;  
+    &lt;!--上面这行不会显示--&gt;  
+  &lt;/children&gt;  
+&lt;/div&gt;  
+&lt;script&gt;  
+  var vm = new Vue({  
+      el: '#app',  
+      components: {  
+         children: {   
+         template: &quot;&lt;h1&gt;我是子组件&lt;/h1&gt;&quot;  
+       }  
+     }  
+  });  
+&lt;/script&gt;  
+</code></pre></div><p>二、简单理解slot
+通俗易懂的讲，slot具有“占坑”的作用，在子组件占好了位置，那父组件使用该子组件标签时，新添加的DOM元素就会自动填到这个坑里面</p> <p>三、单个slot    
+我们将上面的代码改一改 , 给child组件添加slot插槽，那么父组件的添加的DOM元素就填充到这个slot插槽里面了</p> <p>注意：如果有多个DOM元素，会一起插入到</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;slot&gt;&lt;/slot&gt;
+</code></pre></div><p>这个标签内</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;  
+  &lt;children&gt;  
+    &lt;span&gt;我是魔鬼&lt;/span&gt;  
+    &lt;!--上面这行会显示在 “我是子组件” 数据后面--&gt;  
+  &lt;/children&gt;  
+&lt;/div&gt;  
+&lt;script&gt;  
+  var vm = new Vue({  
+      el: '#app',  
+      components: {  
+         children: {   
+         template: &quot;&lt;h1&gt;我是子组件&lt;/h1&gt;&lt;slot&gt;&lt;/slot&gt;&quot;  
+       }  
+     }  
+  });  
+&lt;/script&gt;  
+</code></pre></div><p>四、具名插槽
+现在我们需要将父组件添加的HTML标签放在子组件里的不同位置。具名插槽实现：先在子组件对应分发slot标签里，添加name=”name名” 属性，其次父组件在要分发的标签里添加 slot=”name名” 属性，然后就会将对应的标签放在对应的位置了。</p> <p>简单理解就是：给子组件占的每一个坑取名，将父组件添加的HTML元素添加到指定名字的坑，就实现了分发内容在不同位置显示</p> <p>【Child组件模板】</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+    &lt;h1&gt;我是子组件&lt;/h1&gt;
+    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre></div><p>【父组件引用Child组件】</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;Child&gt;
+  &lt;span slot=&quot;header&quot;&gt;我是header&lt;/span&gt;
+  &lt;span slot=&quot;footer&quot;&gt;我是footer&lt;/span&gt;
+&lt;/Child&gt;
+</code></pre></div><p>会显示成：</p> <blockquote><p>我是header
+我是子组件
+我是footer
+五、编辑作用域
+父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译</p></blockquote> <p>【Child组件模板】</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+    &lt;h1&gt;{{msg}}&lt;/h1&gt;
+    &lt;slot&gt;&lt;/slot&gt;
+    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      msg: '我是子组件里面的内容'
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>【父组件引用Child组件】</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;Child&gt;
+    &lt;span slot=&quot;header&quot;&gt;我是header&lt;/span&gt;
+    &lt;h1&gt;{{msg}}&lt;/h1&gt;
+    &lt;span slot=&quot;footer&quot;&gt;我是footer&lt;/span&gt;
+  &lt;/Child&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      msg: '我是父组件的内容'
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>六、解构slot-scope
+在子组件中插槽中通过：data绑定了数据，父组件可以通过slot-scope=&quot;name&quot;来取得子组件作用域插槽：
+data绑定的数据，name的名称可以随便取，用来定义对象来代替取到的data数据。</p> <p>【Child组件模板】</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;slot :data=&quot;data&quot;&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      data: ['Neinei','Laoba','Demi','Feiyan']
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>【父组件引用Child组件】</p> <div class="language- extra-class"><pre class="language-text"><code>  &lt;template&gt;
+    &lt;!-- 循环数据列表 --&gt;
+    &lt;Child&gt;
+      &lt;div slot-scope=&quot;msg&quot;&gt;
+        &lt;span v-for=&quot;item in msg.data&quot;&gt;{{item}} &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/Child&gt;
+ 
+    &lt;!-- 直接显示数据 --&gt;
+    &lt;Child&gt;
+      &lt;div slot-scope=&quot;msg&quot;&gt;
+        &lt;span&gt;{{msg.data}} &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/Child&gt;
+ 
+    &lt;!-- 不使用其提供的数据, 作用域插槽退变成匿名插槽 --&gt;
+    &lt;Child&gt;
+      &lt;div&gt;我是插槽&lt;/div&gt;
+    &lt;/Child&gt;
+  &lt;/template&gt;
+</code></pre></div><p>显示为：</p> <blockquote><p>Neinei Laoba Demi Feiyan
+['Neinei','Laoba','Demi','Feiyan']
+我是插槽</p></blockquote> <h3 id="vue的路由设置"><a href="#vue的路由设置" class="header-anchor">#</a> vue的路由设置</h3> <p>要引入vue-router.js库文件
+作用：
+根据url锚点的位置，在容器中加载不同的模块，本质是作为页面导航
+完成SPA(Singal Page Application)的开发
+一种特殊的web应用，它将所有活动局限于一个web页面中，仅web页面初始化时加载项应的html、JavaScript、css
+一旦页面加载完成，SPA不会因为用户的操作而进行页面的重新加载或跳转，而是利用JavaScript动态的变换HTML（采用的是div切换显示或隐藏），从而实现ui与用户的交互
+下面是一个简单地单页面示例</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;
+	&lt;ul&gt;
+		&lt;li &gt;
+			&lt;router-link to=&quot;/home&quot;&gt;首页&lt;/router-link&gt;
+		&lt;/li&gt;
+		&lt;li &gt;
+			&lt;router-link to=&quot;/news&quot;&gt;新闻&lt;/router-link&gt;
+		&lt;/li&gt;
+		&lt;li &gt;
+			&lt;router-link to=&quot;/hot&quot;&gt;热点&lt;/router-link&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class=&quot;show&quot;&gt;
+		&lt;router-view&gt;&lt;/router-view&gt;
+	&lt;/div&gt;
+	&lt;button @click=&quot;back()&quot;&gt;go back&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+		const Home={template:'&lt;h2&gt;首页&lt;/h2&gt;'}
+		const News={template:'&lt;h2&gt;新闻&lt;/h2&gt;'}
+		const Hot={template:'&lt;h2&gt;热点&lt;/h2&gt;'}
+		//Vue.extend(template:'&lt;h1&gt;首页&lt;/h1&gt;')
+		//配置路径
+		const routes=[
+			{
+				path:'/home',component:Home
+			},
+			{
+				path:'/news',component:News
+			},
+			{
+				path:'/hot',component:Hot
+			}
+		]
+		
+		//创建router
+		const router = new VueRouter({
+			routes
+		})
+		
+		var vm = new Vue({
+			el:'#app',
+			router,
+			beforeCreate:function(){
+				this.$router.push('/home').catch(err=&gt;{err})
+			},
+			methods:{
+				back(){
+					this.$router.go(-1);
+				}
+			}
+		})
+&lt;/script&gt;
+</code></pre></div><p>二级路由的配置是在一级路由的基础上，在某一个path下再分离出几个低级的path
+示例</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	//新闻模块下有将新闻进行分类：科技、军事等；其他步骤不影响
+	path:'/news',component:News,
+	children:[
+		/* 二级路由，path分配，前面没有“ / ” */
+		{
+			path:'js',
+			component:{
+				template:'&lt;p&gt;军事类新闻&lt;/p&gt;'
+			}
+		},
+		{
+			path:'kj',
+			component:{
+				template:'&lt;p&gt;科技类新闻&lt;/p&gt;'
+			}
+		},
+		{
+			/* 默认页面可以直接用一个组件，也可以重定向 */
+			path:'/',
+			redirect:'js'
+			// component:{
+			// 	template:'&lt;p&gt;默认值&lt;/p&gt;'
+			// }
+		}
+	]
+},
+
+</code></pre></div><h3 id="axios的使用"><a href="#axios的使用" class="header-anchor">#</a> axios的使用</h3> <p>axios的get方法使用
+axios相关使用
+一、axios安装
+使用npm安装axios</p> <div class="language-vue extra-class"><pre class="language-vue"><code>	npm install axios
+</code></pre></div><p>使用cnpm安装axios</p> <div class="language-vue extra-class"><pre class="language-vue"><code>	cnpm install axios
+</code></pre></div><p>使用yarn安装axios</p> <div class="language-vue extra-class"><pre class="language-vue"><code>	yarn install axios
+</code></pre></div><p>使用cdn链接axios</p> <div class="language-vue extra-class"><pre class="language-vue"><code>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/axios/dist/axios.min.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>二、请求数据方法</p> <ul><li>get请求：方式一：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>axios({
+		// 默认请求方式为get
+		method: 'get',
+		url: 'api',
+		// 传递参数
+		params: {
+			key: value
+		},
+		// 设置请求头信息
+		headers: {
+			key: value
+		}
+		responseType: 'json'
+	}).then(response =&gt; {
+		// 请求成功
+		let res = response.data;
+		console.log(res);
+	}).catch(error =&gt; {
+		// 请求失败，
+		console.log(error);
+	});
+</code></pre></div><ul><li>get请求：方式二</li></ul> <div class="language- extra-class"><pre class="language-text"><code>axios.get(&quot;api&quot;, {
+		// 传递参数
+		params: {
+			key: value
+		},
+		// 设置请求头信息，可以传递空值
+		headers: {
+			key: value
+		}
+	}).then(response =&gt; {
+		// 请求成功
+		let res = response.data;
+		console.log(res);
+	}).catch(error =&gt; {
+		// 请求失败，
+		console.log(error);
+	});
+</code></pre></div><ul><li>post请求：方式一</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 注：post请求方法有的要求参数格式为formdata格式，此时需要借助 Qs.stringify()方法将对象转换为字符串
+	let obj = qs.stringify({
+		key: value
+	});
+	
+	axios({
+		method: 'post',
+		url: 'api',
+		// 传递参数
+		data: obj,
+		// 设置请求头信息
+		headers: {
+			key: value
+		}
+		responseType: 'json'
+	}).then(response =&gt; {
+		// 请求成功
+		let res = response.data;
+		console.log(res);
+	}).catch(error =&gt; {
+		// 请求失败，
+		console.log(error);
+	});
+</code></pre></div><ul><li>post请求：方式二</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let data = {
+			key: value
+		},
+		headers = {
+			USERID: &quot;&quot;,
+			TOKEN: &quot;&quot;
+		};
+	// 若无headers信息时，可传空对象占用参数位置
+	axios.post(&quot;api&quot;, qs.stringify(data), {
+		headers
+	}
+	}).then(response =&gt; {
+		// 请求成功
+		let res = response.data;
+		console.log(res);
+	}).catch(error =&gt; {
+		// 请求失败，
+		console.log(error);
+	});
+</code></pre></div><ul><li>Qs的使用
+引用cdn或者使用npm、cnpm或者yarn进行插件安装
+使用cdn时，默认全局变量为Qs
+Qs基本方法使用
+qs.stringify() 方法：将目标数据转换为string字符串
+qs.parse() 方法：将对象字符串格式的数据转换为对象格式</li></ul> <h2 id="vue技术点"><a href="#vue技术点" class="header-anchor">#</a> Vue技术点</h2> <h3 id="vue导出json数据到excel表格"><a href="#vue导出json数据到excel表格" class="header-anchor">#</a> Vue导出json数据到Excel表格</h3> <p>一、安装依赖</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>npm install file<span class="token operator">-</span>saver <span class="token operator">--</span>save
+npm install xlsx <span class="token operator">--</span>save
+npm install script<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+</code></pre></div><p>二、下载两个所需要的js文件Blob.js和 Export2Excel.js。</p> <p>文件地址</p> <p>三、src目录下新建vendor文件夹，将Blob.js和 Export2Excel.js放进去。</p> <p>四、更改webpack.base.conf.js配置</p> <p>在resolve的alias：</p> <p>'vendor': path.resolve(__dirname, '../src/vendor')
+五、在.vue文件中 script部分：</p> <div class="language- extra-class"><pre class="language-text"><code>data(){
+  return{
+    list:[
+        {
+          name:'韩版设计时尚风衣大',
+          number:'MPM00112',
+          salePrice:'￥999.00',
+          stocknums:3423,
+          salesnums:3423,
+          sharenums:3423,
+      },
+      {
+          name:'韩版设计时尚风衣大',
+          number:'MPM00112',
+          salePrice:'￥999.00',
+          stocknums:3423,
+          salesnums:3423,
+          sharenums:3423,
+      },
+    ]
+  }
+ 
+methods:{
+    formatJson(filterVal, jsonData) {
+    　　　　return jsonData.map(v =&gt; filterVal.map(j =&gt; v[j]))
+    　　},
+    export2Excel() {
+    　　　　require.ensure([], () =&gt; {
+    　　　　　　const { export_json_to_excel } = require('../../../vendor/Export2Excel');
+    　　　　　　const tHeader = ['商品名称','商品货号','售价','库存','销量','分享',];
+    　　　　　　const filterVal = ['name', 'number', 'salePrice', 'stocknums', 'salesnums', 'sharenums', ];
+    　　　　　　const list = this.list;
+    　　　　　　const data = this.formatJson(filterVal, list);
+    　　　　　　export_json_to_excel(tHeader, data, '商品管理列表');
+    　　　　})
+    　 }
+}
+template:
+
+&lt;button @click=&quot;export2Excel&quot;&gt;导出&lt;/button&gt;
+</code></pre></div><p>这里说明一下：</p> <p>export2Excel()中require的路径因个人项目结构不同可能需要单独调整，如果报module not found '../../Export2Excel.js'之类请自行修改路径。 tHeader是每一栏的名称，需手动输入。 filterVal是data中list的key值，也是要自己写的。 这里记得要与data里面的list名称对应</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9034dff1.js" defer></script><script src="/assets/js/2.7191eb0b.js" defer></script><script src="/assets/js/12.45ba0c88.js" defer></script>
+  </body>
+</html>
