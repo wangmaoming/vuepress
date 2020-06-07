@@ -7,7 +7,7 @@
     <meta name="generator" content="VuePress 1.5.0">
     <link rel="icon" href="/logo.png">
     <meta name="description" content="">
-    <link rel="preload" href="/assets/css/0.styles.3706292f.css" as="style"><link rel="preload" href="/assets/js/app.71d6b9e0.js" as="script"><link rel="preload" href="/assets/js/2.dc0247f5.js" as="script"><link rel="preload" href="/assets/js/7.e9f756cb.js" as="script"><link rel="prefetch" href="/assets/js/10.c26e20ec.js"><link rel="prefetch" href="/assets/js/11.107e7b1f.js"><link rel="prefetch" href="/assets/js/12.03fc89a8.js"><link rel="prefetch" href="/assets/js/3.45da92ec.js"><link rel="prefetch" href="/assets/js/4.c7c9385d.js"><link rel="prefetch" href="/assets/js/5.6c44cb7f.js"><link rel="prefetch" href="/assets/js/6.2738d908.js"><link rel="prefetch" href="/assets/js/8.9b57d233.js"><link rel="prefetch" href="/assets/js/9.22d507df.js">
+    <link rel="preload" href="/assets/css/0.styles.3706292f.css" as="style"><link rel="preload" href="/assets/js/app.15f64a10.js" as="script"><link rel="preload" href="/assets/js/2.dc0247f5.js" as="script"><link rel="preload" href="/assets/js/7.3c92ed76.js" as="script"><link rel="prefetch" href="/assets/js/10.c26e20ec.js"><link rel="prefetch" href="/assets/js/11.107e7b1f.js"><link rel="prefetch" href="/assets/js/12.fb536970.js"><link rel="prefetch" href="/assets/js/3.45da92ec.js"><link rel="prefetch" href="/assets/js/4.c7c9385d.js"><link rel="prefetch" href="/assets/js/5.6c44cb7f.js"><link rel="prefetch" href="/assets/js/6.2738d908.js"><link rel="prefetch" href="/assets/js/8.78bf7cff.js"><link rel="prefetch" href="/assets/js/9.22d507df.js">
     <link rel="stylesheet" href="/assets/css/0.styles.3706292f.css">
   </head>
   <body>
@@ -55,7 +55,24 @@ CISC与RISC
 <img src="/rkImage/shujubiaoshi04.png" alt="alt 原码" title="原码"></p> <h5 id="数值表示范围，"><a href="#数值表示范围，" class="header-anchor">#</a> 数值表示范围，</h5> <p>n:表示一个字节多少bt位，例如8位
 <img src="/rkImage/shujubiaoshi05.png" alt="alt 数值表示范围" title="数值表示范围"></p> <h5 id="浮点数运算"><a href="#浮点数运算" class="header-anchor">#</a> 浮点数运算</h5> <p>两个数对阶时，用低的指数去对高的指数
 结果格式化：确保左边第一位也就是小数点左边那位，必须是有数，不能是0，比如0.1119。左边也不能是一位以上的数，比如11.19，2.119就可以，因为小数点左边是一位数
-<img src="/rkImage/shujubiaoshi06.png" alt="alt 浮点数运算" title="浮点数运算"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.71d6b9e0.js" defer></script><script src="/assets/js/2.dc0247f5.js" defer></script><script src="/assets/js/7.e9f756cb.js" defer></script>
+<img src="/rkImage/shujubiaoshi06.png" alt="alt 浮点数运算" title="浮点数运算"></p> <h5 id="计算机结构"><a href="#计算机结构" class="header-anchor">#</a> 计算机结构</h5> <p>考点在于CPU里面的运算器和控制器，哪些属于运算器哪些属于控制器
+<img src="/rkImage/shujubiaoshi07.png" alt="alt 计算机结构" title="计算机结构"></p> <h5 id="计算机体系结构分类-flynn"><a href="#计算机体系结构分类-flynn" class="header-anchor">#</a> 计算机体系结构分类-Flynn</h5> <p>体系结构主要分为两类指令流和数据流，然后这两只组合成四种体系结构类型（以数学化穷举的方式分类）
+阵列处理机主要是对数组的运算，比如二维数组，
+MIMD是最常见的
+<img src="/rkImage/shujubiaoshi08.png" alt="alt 计算机体系" title="计算机体系"></p> <h5 id="cisc与risc"><a href="#cisc与risc" class="header-anchor">#</a> CISC与RISC</h5> <p>考点：一般都是一个选择题考哪个是其特点，以下说法正确的是之类的
+CISC是在计算机没有大规模普遍的时候提出来的，从硬件到指令系统都是按照规定来设计的，很多年前的东西。
+RISC是在计算机普遍性高的时候，
+<img src="/rkImage/shujubiaoshi09.png" alt="alt CISC与RISC" title="CISC与RISC"></p> <h5 id="流水线-概念"><a href="#流水线-概念" class="header-anchor">#</a> 流水线-概念</h5> <p>考点在于CPU里面的运算器和控制器，哪些属于运算器哪些属于控制器
+<img src="/rkImage/shujubiaoshi10.png" alt="alt 流水线-概念" title="流水线-概念"></p> <h5 id="流水线-计算"><a href="#流水线-计算" class="header-anchor">#</a> 流水线-计算</h5> <p>流水线周期是，三部分中最长的那个时间，三角形T
+百分之八十的都是用理论公式其余的可能是时间公式。所以注重理论公式的答案，如果没有就是实践公式的答案
+<img src="/rkImage/shujubiaoshi11.png" alt="alt 流水线-计算" title="流水线-计算"></p> <h5 id="流水线-吞吐率"><a href="#流水线-吞吐率" class="header-anchor">#</a> 流水线-吞吐率</h5> <p>TP：依照上一题中所写，指令条数100，流水线执行时间203
+最大吞吐率：1就是一条指令，最长的那个时间，△T
+<img src="/rkImage/shujubiaoshi12.png" alt="alt 流水线-计算" title="流水线-计算"></p> <h5 id="流水线-加速比"><a href="#流水线-加速比" class="header-anchor">#</a> 流水线-加速比</h5> <p>不使用流水线时间：依照上一题中所写，（2+2+1）*100就是不执行流水线所花时间
+使用流水线时间：依照上一题中所写，203
+加速比是越高越好，说明流水线时间越低。
+<img src="/rkImage/shujubiaoshi13.png" alt="alt 流水线-计算" title="流水线-计算"></p> <h5 id="流水线-效率"><a href="#流水线-效率" class="header-anchor">#</a> 流水线-效率</h5> <p>n个任务所占时空区除以总的时空区就是效率
+当每一个流程所用时间都一样的时候是效率最高的时候，也就是△T时间倍数一样，目前是一个是3△T所以效率不高
+<img src="/rkImage/shujubiaoshi14.png" alt="alt 流水线-计算" title="流水线-计算"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.15f64a10.js" defer></script><script src="/assets/js/2.dc0247f5.js" defer></script><script src="/assets/js/7.3c92ed76.js" defer></script>
   </body>
 </html>
