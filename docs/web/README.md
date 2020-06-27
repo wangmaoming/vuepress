@@ -451,6 +451,8 @@ $ git merge hotfix
 ## HTML
 ## CSS
 ## JS
+### es6
+
 
 ## Vue基础
 ### Vue.js是什么

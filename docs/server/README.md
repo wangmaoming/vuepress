@@ -109,4 +109,78 @@ def scread():
     # return "你当前名字是：%s"%session.get('username')
     return "你当前名字是：%s" % request.cookies.get('username')
 ```
+### MVC模型
+![alt 视图控制器02](/MVCmodel@2x.png "视图控制器02")
+
+### 模块化与拦截器
+使用Blueprint蓝图对路由进行模块化处理
+1.入口文件注册蓝图
+```python
+# 注册蓝图
+app.register_blueprint(demo)
+```
+2.模块话的文件里面使用蓝图
+```python
+from flask import Blueprint
+demo=Blueprint('demo',__name__)
+
+@demo.route('/demo')
+def onedemo():
+    return "蓝图设置模块化"
+```
+### python的代码主要分为三层
+1.包（含有__init__.py的文件夹）
+2.模块（包下面的.py的源代码/源文件）
+3.类class ， 函数，全局变量
+
+### 拦截器
+对接口请求进行预先处理，然后交由控制器处理，说白了就是在客户端与服务器控制器中间加了一个拦截器用于审核。
+#### 全局拦截器
+应用于flask实例（app.py）中，对所有经过当前系统的请求进行拦截检查
+a)全局拦截器，要设置好白名单，让无需检验的接口正常访问
+b)全局拦截器，由于会检查每一个请求，所以会导致性能的下降，尽量少用
+```python 
+# 拦截器
+@app.before_request
+def before():
+    url = request.path
+    if url == '/sess':
+        pass
+    #     如果用户登陆session['islogin'] = 'true'，不拦截
+    elif session.get('islogin') != 'true':
+        return "没有登陆无法访问"
+    else:
+        pass
+# 拦截器可以搞一个白名单，就是可以不用验证就通过
+    pass_list=['/','/reg','/login','/vcode','/sess']
+    suffix=url.endswith('.png')or url.endswith('.jpg'or url.endswith('.css')or url.endswith('.js'))
+    if url in pass_list or suffix:
+        pass
+    else:
+        return "开始实现拦截"
+```
+#### 控制器拦截器（模块拦截器）
+只针对某个模块进行拦截，应用于blueprint模块
+```python
+from flask import Blueprint, request
+
+demo=Blueprint('demo',__name__)
+# 定义一个模块拦截器
+@demo.before_request
+def demo_before():
+    url = request.path
+    if url == '/demo1':
+        return "无法访问"
+
+@demo.route('/demo1')
+def onedemo1():
+    return "蓝图设置模块化1"
+
+@demo.route('/demo2')
+def onedemo2():
+    return "蓝图设置模块化2"
+```
+### 模版引擎-Jinja2
+[看这个就够了](https://blog.csdn.net/u011146423/article/details/84314335)
+
 
