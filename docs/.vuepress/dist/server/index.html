@@ -7,7 +7,7 @@
     <meta name="generator" content="VuePress 1.5.0">
     <link rel="icon" href="/logo.png">
     <meta name="description" content="">
-    <link rel="preload" href="/assets/css/0.styles.3706292f.css" as="style"><link rel="preload" href="/assets/js/app.15f64a10.js" as="script"><link rel="preload" href="/assets/js/2.dc0247f5.js" as="script"><link rel="preload" href="/assets/js/10.c26e20ec.js" as="script"><link rel="prefetch" href="/assets/js/11.107e7b1f.js"><link rel="prefetch" href="/assets/js/12.fb536970.js"><link rel="prefetch" href="/assets/js/3.45da92ec.js"><link rel="prefetch" href="/assets/js/4.c7c9385d.js"><link rel="prefetch" href="/assets/js/5.6c44cb7f.js"><link rel="prefetch" href="/assets/js/6.2738d908.js"><link rel="prefetch" href="/assets/js/7.3c92ed76.js"><link rel="prefetch" href="/assets/js/8.78bf7cff.js"><link rel="prefetch" href="/assets/js/9.22d507df.js">
+    <link rel="preload" href="/assets/css/0.styles.3706292f.css" as="style"><link rel="preload" href="/assets/js/app.92b16bb9.js" as="script"><link rel="preload" href="/assets/js/2.dc0247f5.js" as="script"><link rel="preload" href="/assets/js/10.8860d620.js" as="script"><link rel="prefetch" href="/assets/js/11.1b000265.js"><link rel="prefetch" href="/assets/js/12.11b7108b.js"><link rel="prefetch" href="/assets/js/3.45da92ec.js"><link rel="prefetch" href="/assets/js/4.c7c9385d.js"><link rel="prefetch" href="/assets/js/5.6c44cb7f.js"><link rel="prefetch" href="/assets/js/6.2738d908.js"><link rel="prefetch" href="/assets/js/7.3c92ed76.js"><link rel="prefetch" href="/assets/js/8.9b57d233.js"><link rel="prefetch" href="/assets/js/9.2cdbfcea.js">
     <link rel="stylesheet" href="/assets/css/0.styles.3706292f.css">
   </head>
   <body>
@@ -35,7 +35,136 @@
   IOS
 </a></div><div class="nav-item"><a href="/server/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
   Server
-</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Server</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/#flask" class="sidebar-link">flask</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="server"><a href="#server" class="header-anchor">#</a> Server</h1> <h2 id="flask"><a href="#flask" class="header-anchor">#</a> flask</h2></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.15f64a10.js" defer></script><script src="/assets/js/2.dc0247f5.js" defer></script><script src="/assets/js/10.c26e20ec.js" defer></script>
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Server</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/#flask" class="sidebar-link">flask</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/server/#路由" class="sidebar-link">路由</a></li><li class="sidebar-sub-header"><a href="/server/#restful风格规范" class="sidebar-link">RESTful风格规范</a></li><li class="sidebar-sub-header"><a href="/server/#session-和cookie" class="sidebar-link">session 和cookie</a></li><li class="sidebar-sub-header"><a href="/server/#mvc模型" class="sidebar-link">MVC模型</a></li><li class="sidebar-sub-header"><a href="/server/#模块化与拦截器" class="sidebar-link">模块化与拦截器</a></li><li class="sidebar-sub-header"><a href="/server/#python的代码主要分为三层" class="sidebar-link">python的代码主要分为三层</a></li><li class="sidebar-sub-header"><a href="/server/#拦截器" class="sidebar-link">拦截器</a></li><li class="sidebar-sub-header"><a href="/server/#模版引擎-jinja2" class="sidebar-link">模版引擎-Jinja2</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="server"><a href="#server" class="header-anchor">#</a> Server</h1> <h2 id="flask"><a href="#flask" class="header-anchor">#</a> flask</h2> <h3 id="路由"><a href="#路由" class="header-anchor">#</a> 路由</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'article-user.html'</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/reg'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">,</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;good&quot;</span>
+<span class="token comment"># 查询参数</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    username <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>
+    password <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'password'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;你的用户名：%s,密码：%s&quot;</span><span class="token operator">%</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span>
+<span class="token comment"># 路由参数地址,加一个int解决参数类型的限制</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article/&lt;int:articleid&gt;-&lt;page&gt;'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">article</span><span class="token punctuation">(</span>articleid<span class="token punctuation">,</span>page<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f&quot;你正在访问编号为：</span><span class="token interpolation"><span class="token punctuation">{</span>articleid<span class="token punctuation">}</span></span><span class="token string">的文章,目前是第</span><span class="token interpolation"><span class="token punctuation">{</span>page<span class="token punctuation">}</span></span><span class="token string">页&quot;</span></span>
+<span class="token comment"># post请求正文参数</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/login'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    username <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>
+    password <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'password'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> username<span class="token operator">==</span><span class="token string">'wangmaoming'</span> <span class="token keyword">and</span> password<span class="token operator">==</span><span class="token string">'111'</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;登陆成功！！！&quot;</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;登陆失败&quot;</span>
+
+</code></pre></div><h3 id="restful风格规范"><a href="#restful风格规范" class="header-anchor">#</a> RESTful风格规范</h3> <table><thead><tr><th>接口功能</th> <th>请求类型</th> <th>接口定义</th> <th>备注</th></tr></thead> <tbody><tr><td>查询所有文章</td> <td>GET</td> <td>/article</td> <td>地址只能是/article，不能附加其他内容，例如，/article/all不是有效的RESTful</td></tr> <tr><td>查询一篇文章</td> <td>GET</td> <td>/article/id</td> <td>通过指定文章的id进行查询</td></tr> <tr><td>新增一篇文章</td> <td>POST</td> <td>/article</td> <td>地仍然是/article，没有附加其他内容，非RESTful的地址风格很可能写成/article/add，这个地址没有正确描述资源</td></tr> <tr><td>删除一篇文章</td> <td>DELETE</td> <td>/article/id</td> <td>指定删除哪一篇文章，请勿使用/article/delete/id</td></tr> <tr><td>修改一篇文章</td> <td>PUT</td> <td>/article/id 对某个ID的文章进行更新，更新的数据由PUT请求的正文指定，请勿使用/article/update/id</td> <td></td></tr></tbody></table> <h4 id="满足restful风格的接口地址"><a href="#满足restful风格的接口地址" class="header-anchor">#</a> 满足RESTful风格的接口地址</h4> <div class="language-python extra-class"><pre class="language-python"><code>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;获取文章&quot;</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;新增文章&quot;</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article/123'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'PUT'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;读取文章&quot;</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article/123'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'DELETE'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;删除文章&quot;</span>
+</code></pre></div><p>url重定向问题，是HTTP协议本身的功能，重定向302状态码，在响应头里面通过指定location字段告诉浏览器，跳转地址
+url_for(&quot;系统里面的函数名&quot;) redirect(url_for('index')) 或者直接用redirect（'/'）</p> <div class="language-python extra-class"><pre class="language-python"><code>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/red'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">red</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/redjs'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">redjs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    html<span class="token operator">=</span><span class="token string">&quot;感谢访问，2秒之后跳转到首页&quot;</span>
+    html<span class="token operator">+=</span><span class="token string">&quot;&lt;script&gt;&quot;</span>
+    html<span class="token operator">+=</span><span class="token string">&quot;setTimeout(function(){location.href='/';},2000);&quot;</span>
+    html<span class="token operator">+=</span><span class="token string">&quot;&lt;/script&gt;&quot;</span>
+    <span class="token keyword">return</span> html
+</code></pre></div><h3 id="session-和cookie"><a href="#session-和cookie" class="header-anchor">#</a> session 和cookie</h3> <p>要处理session，必须为app实例设置SECRET_KEY配置参数(app.config['SECRET_KEY']= os.urandom(24))，配置随机数生成器（session id）,再使用session函数进行操作
+<a href="https://www.cnblogs.com/XLHIT/p/11171454.html" target="_blank" rel="noopener noreferrer">配置参数<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>处理cookie，使用response对象来往http的响应中写入满足http协议的cookie要求信息（key,value,age）
+<a href="https://www.cnblogs.com/zhuchunyu/p/10466509.html" target="_blank" rel="noopener noreferrer">response<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/sess'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">sess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    session<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'wangmaoming'</span>
+    session<span class="token punctuation">[</span><span class="token string">'nickname'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'wonder'</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;存储&quot;</span>
+<span class="token comment"># 利用自定义响应的方式来往浏览器设置cookie</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/cook'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">cook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response<span class="token operator">=</span>make_response<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    response<span class="token punctuation">.</span>set_cookie<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span><span class="token string">'wangmaoming'</span><span class="token punctuation">,</span>max_age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span>
+    response<span class="token punctuation">.</span>set_cookie<span class="token punctuation">(</span><span class="token string">'password'</span><span class="token punctuation">,</span> <span class="token string">'123'</span><span class="token punctuation">,</span> max_age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> response
+
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/sc/read'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">scread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># return &quot;你当前名字是：%s&quot;%session.get('username')</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;你当前名字是：%s&quot;</span> <span class="token operator">%</span> request<span class="token punctuation">.</span>cookies<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="mvc模型"><a href="#mvc模型" class="header-anchor">#</a> MVC模型</h3> <p><img src="/MVCmodel@2x.png" alt="alt 视图控制器02" title="视图控制器02"></p> <h3 id="模块化与拦截器"><a href="#模块化与拦截器" class="header-anchor">#</a> 模块化与拦截器</h3> <p>使用Blueprint蓝图对路由进行模块化处理
+1.入口文件注册蓝图</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 注册蓝图</span>
+app<span class="token punctuation">.</span>register_blueprint<span class="token punctuation">(</span>demo<span class="token punctuation">)</span>
+</code></pre></div><p>2.模块话的文件里面使用蓝图</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Blueprint
+demo<span class="token operator">=</span>Blueprint<span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">,</span>__name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@demo<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/demo'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">onedemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;蓝图设置模块化&quot;</span>
+</code></pre></div><h3 id="python的代码主要分为三层"><a href="#python的代码主要分为三层" class="header-anchor">#</a> python的代码主要分为三层</h3> <p>1.包（含有__init__.py的文件夹）
+2.模块（包下面的.py的源代码/源文件）
+3.类class ， 函数，全局变量</p> <h3 id="拦截器"><a href="#拦截器" class="header-anchor">#</a> 拦截器</h3> <p>对接口请求进行预先处理，然后交由控制器处理，说白了就是在客户端与服务器控制器中间加了一个拦截器用于审核。</p> <h4 id="全局拦截器"><a href="#全局拦截器" class="header-anchor">#</a> 全局拦截器</h4> <p>应用于flask实例（app.py）中，对所有经过当前系统的请求进行拦截检查
+a)全局拦截器，要设置好白名单，让无需检验的接口正常访问
+b)全局拦截器，由于会检查每一个请求，所以会导致性能的下降，尽量少用</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 拦截器</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>before_request</span>
+<span class="token keyword">def</span> <span class="token function">before</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> request<span class="token punctuation">.</span>path
+    <span class="token keyword">if</span> url <span class="token operator">==</span> <span class="token string">'/sess'</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+    <span class="token comment">#     如果用户登陆session['islogin'] = 'true'，不拦截</span>
+    <span class="token keyword">elif</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'islogin'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">'true'</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;没有登陆无法访问&quot;</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+<span class="token comment"># 拦截器可以搞一个白名单，就是可以不用验证就通过</span>
+    pass_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'/'</span><span class="token punctuation">,</span><span class="token string">'/reg'</span><span class="token punctuation">,</span><span class="token string">'/login'</span><span class="token punctuation">,</span><span class="token string">'/vcode'</span><span class="token punctuation">,</span><span class="token string">'/sess'</span><span class="token punctuation">]</span>
+    suffix<span class="token operator">=</span>url<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.png'</span><span class="token punctuation">)</span><span class="token keyword">or</span> url<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.jpg'</span><span class="token keyword">or</span> url<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.css'</span><span class="token punctuation">)</span><span class="token keyword">or</span> url<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> url <span class="token keyword">in</span> pass_list <span class="token keyword">or</span> suffix<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;开始实现拦截&quot;</span>
+</code></pre></div><h4 id="控制器拦截器（模块拦截器）"><a href="#控制器拦截器（模块拦截器）" class="header-anchor">#</a> 控制器拦截器（模块拦截器）</h4> <p>只针对某个模块进行拦截，应用于blueprint模块</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Blueprint<span class="token punctuation">,</span> request
+
+demo<span class="token operator">=</span>Blueprint<span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">,</span>__name__<span class="token punctuation">)</span>
+<span class="token comment"># 定义一个模块拦截器</span>
+<span class="token decorator annotation punctuation">@demo<span class="token punctuation">.</span>before_request</span>
+<span class="token keyword">def</span> <span class="token function">demo_before</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> request<span class="token punctuation">.</span>path
+    <span class="token keyword">if</span> url <span class="token operator">==</span> <span class="token string">'/demo1'</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;无法访问&quot;</span>
+
+<span class="token decorator annotation punctuation">@demo<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/demo1'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">onedemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;蓝图设置模块化1&quot;</span>
+
+<span class="token decorator annotation punctuation">@demo<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/demo2'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">onedemo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;蓝图设置模块化2&quot;</span>
+</code></pre></div><h3 id="模版引擎-jinja2"><a href="#模版引擎-jinja2" class="header-anchor">#</a> 模版引擎-Jinja2</h3> <p><a href="https://blog.csdn.net/u011146423/article/details/84314335" target="_blank" rel="noopener noreferrer">看这个就够了<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.92b16bb9.js" defer></script><script src="/assets/js/2.dc0247f5.js" defer></script><script src="/assets/js/10.8860d620.js" defer></script>
   </body>
 </html>
