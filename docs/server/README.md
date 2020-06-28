@@ -183,4 +183,91 @@ def onedemo2():
 ### 模版引擎-Jinja2
 [看这个就够了](https://blog.csdn.net/u011146423/article/details/84314335)
 
+### pymysql
+```python
+import pymysql
 
+# 所有的i/o操作：文件，数据库，网络等均有下面三步操作
+# 1连接数据库.
+conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='wangmaoming218',charset='utf8',database='woniunote',autocommit=True)
+# 2执行sql语句
+# a.实例话一个游标对象，
+cursor=conn.cursor()
+
+# b.定义sql语句
+# sql="select * from users"
+# #c.通过游标执行
+# cursor.execute(sql)
+# # d.处理执行结果
+# result=cursor.fetchall()
+# for row in result:
+#     print(row[6])
+# print(result)
+#   更新
+sql="update users set qq='1072445948' where userid=2"
+cursor.execute(sql)
+# 提交修改 update,insert,delete
+# conn.commit()
+# 关闭数据库连接
+cursor.close() #关闭游标
+conn.close() #关闭数据库对象
+
+```
+### 魔术方法（__name__）
+```python
+class User:
+    table_name='users'  #类属性
+
+    def __init__(self):
+        self.username='wangmaoming' #实例变量
+        self.password = '123'
+        self.email = '1072445948@qq.com'
+    def method(self,value):
+        print("hello %s" % value)
+    #     链式操作
+    def chain(self):
+        print("通过返回当前类的实例进行连续的方法调用")
+        return self
+    def hello(self):
+        print("hello in chain")
+        return self
+if __name__=='__main__':
+    print(User.__dict__) #通过类名可以直接获取到类的属性和方法
+    user=User() #实例化User类
+    print(user.__class__) #通过实例可以获取到对应的类   <class '__main__.User'>
+    print(user.__class__.__dict__)
+
+#     通过__来区分哪些是自定义属性和方法，一般没有__的是自定义的
+    for k, v in User.__dict__.items():
+        if not k.startswith('__'):
+            print(k,v)  #table_name users   method <function User.method at 0x7fdbec9aa050>
+
+    print(User.__name__)  #User
+
+    print(user.__dict__)  #获取实例变量或属性 {'username': 'wangmaoming', 'password': '123', 'email': '1072445948@qq.com'}
+
+    # user.nickname='小王'
+    # print(user.__dict__) #添加实例属性{'username': 'wangmaoming', 'password': '123', 'email': '1072445948@qq.com', 'nickname': '小王'}
+    # __setattr__魔术方法
+    user.__setattr__('nickname','小王')
+    print(user.__dict__)  #加实例属性{'username': 'wangmaoming', 'password': '123', 'email': '1072445948@qq.com', 'nickname': '小王'}
+    # 全局函数一样可以
+    setattr(user,'nickname','小王')
+    print(user.__dict__)
+
+    print(user.__getattribute__('nickname')) #小王
+    print(user.__getattribute__('method'))
+    user.__getattribute__('method')('成都')   #hello 成都
+
+    getattr(user,'method')('北京')  #hello 北京
+    # 链式操作
+    user.chain().chain().hello().chain()
+```
+### 自定义ORM框架
+1. ORM(Object-Relational Mapping)对象-关系映射，把数据转换成python对象，与python无关，想Java，C都有。
+这样就能实现对数据库的操作对象化，减少或者不用编写sql原生语句
+2. 数据库重的表 -> python 的类
+3. 表中的列 -> 类的属性
+4. 表里面的行 ->类的实例，字典对象表述
+5. 字典对象的key对应列，value对应值
+6. 对增删改查进行封装，
