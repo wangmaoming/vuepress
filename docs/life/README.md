@@ -1000,38 +1000,39 @@ Model和View并无直接关联，而是通过ViewModel来进行联系的，Model
 这种模式实现了Model和View的数据自动同步，因此开发者只需要专注对数据的维护操作即可，而不需要自己操作dom。
 ### Vue 有哪些指令？
 ```vue
-    1.文本插值：{{}} Mustache
-        <div id='app'>
-            {{message}}
-        </div>
-    2.DOM属性绑定：v-bind
-        <div id='app-2'>
-            <span v-bind:title='message'>
-                鼠标悬停几秒钟查看此处动态绑定的提示信息
-            </span>
-        </div>
-    3.指令绑定一个事件监听器：v-on
-        <div id='app-5'>
-            <p>{{message}}</p>
-            <button v-on:click='reverseMessage'>逆转消息</button>
-        </div>
-    4.实现表单输入和应用状态之间的双向绑定：v-model
-        <div id='app-6'>
-            <p>{{message}}</p>
-            <input v-model='message'>
-        </div>
-    5.控制切换一个元素的显示：v-if和v-else
-        <div id='app-3'>
-            <p v-if='seen'>现在你看到我了</p>
-        </div>
-    6.列表渲染:v-for
-        <div id='app-4'>
-            <ol>
-                <li v-for='todo in todos'>
-                    {{todo.text}}
-                </li>
-            </ol>
-
+1.文本插值：{{}} Mustache
+    <div id='app'>
+        {{message}}
+    </div>
+2.DOM属性绑定：v-bind
+    <div id='app-2'>
+        <span v-bind:title='message'>
+            鼠标悬停几秒钟查看此处动态绑定的提示信息
+        </span>
+    </div>
+3.指令绑定一个事件监听器：v-on
+    <div id='app-5'>
+        <p>{{message}}</p>
+        <button v-on:click='reverseMessage'>逆转消息</button>
+    </div>
+4.实现表单输入和应用状态之间的双向绑定：v-model
+    <div id='app-6'>
+        <p>{{message}}</p>
+        <input v-model='message'>
+    </div>
+5.控制切换一个元素的显示：v-if和v-else
+    <div id='app-3'>
+        <p v-if='seen'>现在你看到我了</p>
+    </div>
+6.列表渲染:v-for
+    <div id='app-4'>
+        <ol>
+            <li v-for='todo in todos'>
+                {{todo.text}}
+            </li>
+        </ol>
+7.v-text：会把h1标签转义输出。即原模原样输出，h1标签没效果
+8.v-html：会直接输出结果。即h1标签会出效果
 
 ```
 ### 列举Http请求中常见的请求方式
@@ -1304,7 +1305,7 @@ computed: {
 ```
 利用计算属性的特性来实现，当依赖改变时，便会重新计算一个新值。
 
-### vuex的作用
+### vuex（状态管理）的作用
 vuex是一个专门为vue.js应用程序开发的状态管理模式
     vuex可以帮助我们管理共享状态，也就是管理全局变量
     vuex的几个核心概念：
