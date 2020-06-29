@@ -271,3 +271,285 @@ if __name__=='__main__':
 4. 表里面的行 ->类的实例，字典对象表述
 5. 字典对象的key对应列，value对应值
 6. 对增删改查进行封装，
+
+```python
+import pymysql
+from pymysql.cursors import DictCursor
+
+
+class MySQL:
+    # 实例话，创建与数据库之间的连接
+    def __init__(self):
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='wangmaoming218',
+                               charset='utf8', database='woniunote', autocommit=True)
+        self.cursor = conn.cursor(DictCursor)
+
+    # 查询
+    def query(self, sql):
+        self.cursor.execute(sql)
+        result = self.cursor.fetchall()
+        return result
+
+    def execute(self, sql):
+        try:
+            self.cursor.execute(sql)
+            return 'ok'
+        except:
+            return 'fail'
+
+
+class Model:
+    # 构造方法，传字典参数作为insert的key,value
+    def __init__(self, **kwargs):
+        for k, v in kwargs.items():
+            self.__setattr__(k, v)
+#     通过链式操作指定查询哪些列
+    def field(self,columns):
+        self.columns =columns #动态增加类实例属性
+        return self
+    # 带列名查询条件
+    def select(self, **where):
+        table=self.__class__.__getattribute__(self,'table_name')
+        if hasattr(self,'columns'):
+            sql = "select %s from %s " % (self.columns,table)
+        else:
+            sql = "select * from %s " %  table
+        if where is not None:
+            sql += "where"
+            for k, v in where.items():
+                sql += " %s='%s' and" % (k, v)
+            sql += ' 1=1'
+        print(sql)
+        result = MySQL().query(sql)
+        return result
+#     封装新增：insert into table(c1,c2) values(v1,v2)
+    def insert(self):
+        keys=[]
+        values=[]
+        for k ,v in self.__dict__.items():
+            keys.append(k)
+            values.append(str(v))
+        sql = "insert into %s(%s) value ('%s')" %(self.table_name,','.join(keys),"','".join(values))
+        print(sql)
+        result = MySQL().query(sql)
+        print(result)
+
+class User(Model):
+    table_name='users'
+#     调用父类的构造方法
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+class Article(Model):
+    table_name='article'
+#     调用父类的构造方法
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+
+user =User()
+result=user.field('userid,username').select(userid=1)
+print(result)
+
+# class User:
+#     table_name = 'users'  # 定义表名
+#
+#     # 构造方法，传字典参数作为insert的key,value
+#     def __init__(self, **kwargs):
+#         for k, v in kwargs.items():
+#             self.__setattr__(k, v)
+#
+#     #  **字典参数
+#     def select(self, **where):
+#         sql = "select * from %s " % self.table_name
+#         if where is not None:
+#             sql += "where"
+#             for k, v in where.items():
+#                 sql += " %s='%s' and" % (k, v)
+#             sql += ' 1=1'
+#         print(sql)
+#         result = MySQL().query(sql)
+#         return result
+#
+# #     封装新增：insert into table(c1,c2) values(v1,v2)
+#     def insert(self):
+#         keys=[]
+#         values=[]
+#         for k ,v in self.__dict__.items():
+#             keys.append(k)
+#             values.append(str(v))
+#         sql = "insert into %s(%s) value ('%s')" %(self.table_name,','.join(keys),"','".join(values))
+#         print(sql)
+#         result = MySQL().query(sql)
+#         print(result)
+
+# if __name__ == '__main__':
+#     # user = User()
+#     # result = user.select(userid=2, nickname='sad')
+#     # print(result)
+#     user =User(username='wmm',password='123',role='user',credit='50')
+#     user.insert()
+
+```
+### SQLAlchemy
+数据库连接以及通过代码创建一个userx表。如果数据库已经创建好了没必要又写在代码中。
+```python
+# 建立与mysql的连接
+from sqlalchemy import create_engine, Column, Integer, String, DateTime
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, session, scoped_session
+
+engine =create_engine('mysql+pymysql://root:wangmaoming218@localhost/woniunote')
+
+# 定义模型类继承的父类及数据连接会话
+DBsession=sessionmaker(bind=engine)
+dbsession=scoped_session(DBsession)  #线程安全的scoped_session
+Base=declarative_base()
+
+#定义模型类
+class Users(Base):
+    __tablename__ ="userx"
+#     假如数据库没有去创建表，我们可以在这里通过代码创建，如果需要在SQLAlchemy里面直接创建表结构，则详细定义列
+    userid =Column(Integer,primary_key=True)
+    username=Column(String(50))
+    password = Column(String(32))
+    nickname = Column(String(30))
+    qq = Column(String(15))
+    role = Column(String(10))
+    credit = Column(Integer)
+    createtime = Column(DateTime)
+    updatetime = Column(DateTime)
+
+# 创建表
+Users.metadata.create_all(engine)
+
+```
+
+独立的SQLAlchemy数据库操作
+
+```python
+# 建立与mysql的连接
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, MetaData, Table
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, session, scoped_session
+
+engine = create_engine('mysql+pymysql://root:wangmaoming218@localhost/woniunote')
+
+# 定义模型类继承的父类及数据连接会话
+DBsession = sessionmaker(bind=engine)
+dbsession = scoped_session(DBsession)  # 线程安全的scoped_session
+Base = declarative_base()
+md = MetaData(bind=engine)
+
+
+# 定义模型类
+# class Users(Base):
+#     __tablename__ ="userx"
+# #     假如数据库没有去创建表，我们可以在这里通过代码创建，如果需要在SQLAlchemy里面直接创建表结构，则详细定义列
+#     userid =Column(Integer,primary_key=True)
+#     username=Column(String(50))
+#     password = Column(String(32))
+#     nickname = Column(String(30))
+#     qq = Column(String(15))
+#     role = Column(String(10))
+#     credit = Column(Integer)
+#     createtime = Column(DateTime)
+#     updatetime = Column(DateTime)
+#
+# # 创建表
+# Users.metadata.create_all(engine)
+
+class Users(Base):
+    __table__ = Table('users', md, autoload=True)
+
+class Article(Base):
+    __table__ = Table('article', md, autoload=True)
+
+if __name__ == '__main__':
+    # result=dbsession.query(Users).filter(Users.userid>2).all()
+    result = dbsession.query(Users).filter_by(userid=2).all()
+    for row in result:
+        print(row.userid)
+
+    row =dbsession.query(Users).filter(Users.userid<5).first()
+    print(row)
+    print(row.userid,row.username)
+
+    row = dbsession.query(Users.userid,Users.username).filter(Users.userid < 5).first()
+    print(row)
+
+#     新增
+#     user =Users(username='wmm1',password='123',role='user',credit='50')
+#     dbsession.add(user)
+#     dbsession.commit()   #手动提交
+
+#     更新，需要查询出来要修改的行，再进行修改
+#     row=dbsession.query(Users).filter_by(userid=4).first()
+#     row.username='daskdas'
+#     dbsession.commit()
+
+    row=dbsession.query(Users).filter_by(userid=4).delete()
+    dbsession.commit()
+
+```
+
+### flask_sqlalchemy(flask集成SQLAlchemy)
+
+第一步在main.py文件连接数据库并实例话db对象
+
+```python
+from flask import Flask, render_template, request, url_for, redirect, session, make_response
+import os
+
+from flask_sqlalchemy import SQLAlchemy
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
+app = Flask(__name__, template_folder='template', static_url_path='/', static_folder='resource', )
+app.config['SECRET_KEY'] = os.urandom(24)
+# 使用集成方式处理SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:wangmaoming218@localhost/woniunote?charset=utf8'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+# 实例话db对象
+db=SQLAlchemy(app)
+
+
+if __name__ == '__main__':
+    # 局部引用demo.py，因为只有在当__name__ == '__main__'
+    # 注册蓝图
+    from controller.demo import *
+    app.register_blueprint(demo)
+
+    from controller.user import *
+    app.register_blueprint(user)
+
+    app.run(debug=True)
+```
+
+第二步，在module下建一个users.py文件，导入db构建模型类，以及数据库操作方法
+```python
+from sqlalchemy import Table, MetaData
+
+from main import db
+
+class Users(db.Model):
+    __table__ = Table('users', MetaData(bind=db.engine), autoload=True)
+
+    def find_user_by_id(self,userid):
+        row =db.session.query(Users).filter(Users.userid==userid).first()
+        return row
+```
+
+第三步，生成一个接口，向这个接口输出我们需要的信息
+```python
+from module.users import  Users
+
+from  flask import Blueprint
+user=Blueprint('user',__name__)
+
+@user.route('/user')
+def user_demo():
+    users=Users()
+    row=users.find_user_by_id(1)
+    return row.username
+
+```

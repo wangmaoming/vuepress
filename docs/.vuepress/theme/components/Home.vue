@@ -105,19 +105,19 @@ export default {
       max-width 35rem
       font-size 1.6rem
       line-height 1.3
-      color #95c9ff
+      color #000204
     .action-button
       display inline-block
       font-size 1.2rem
       color #fff
-      background-color #66b0f8
+      background-color #000204
       padding 0.8rem 1.6rem
       border-radius 50%
       transition background-color .1s ease
       box-sizing border-box
-      border-bottom 1px solid #66b0f8
+      border-bottom 1px solid #000204
       &:hover
-        background-color #66b0f8
+        background-color #000204
   .features
     border-top 1px solid $borderColor
     padding 1.2rem 0
@@ -136,7 +136,7 @@ export default {
       font-weight 500
       border-bottom none
       padding-bottom 0
-      color #95c9ff
+      color #000204
     p
       color #d6ebff
   .footer

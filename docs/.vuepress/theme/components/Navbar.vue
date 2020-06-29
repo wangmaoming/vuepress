@@ -95,7 +95,7 @@ function css (el, property) {
 <style lang="stylus">
 $navbar-vertical-padding = 0.7rem
 $navbar-horizontal-padding = 1.5rem
-$text-color-style=#95c9ff
+$text-color-style=#000204
 
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
