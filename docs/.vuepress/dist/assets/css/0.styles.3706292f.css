@@ -488,7 +488,7 @@ body,
 html {
     padding: 0;
     margin: 0;
-    background-color: #0078f1
+    background-color: #0f4ea4
 }
 
 body {
@@ -528,7 +528,7 @@ body {
 
 .sidebar {
     font-size: 16px;
-    background-color: #0078f1;
+    background-color: #0f4ea4;
     width: 20rem;
     position: fixed;
     z-index: 10;

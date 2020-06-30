@@ -553,3 +553,47 @@ def user_demo():
     return row.username
 
 ```
+### SQLAlchemy基础查询
+Flask框架本身是最小化Web服务内核，表与表之间的关系，不一定要定义在数据库中，心中有关系就行。
+（数据库为了维护主外键关系，会增加额外消耗）。
+删除数据时，尽量使用软删除（设置标识），而不是直接硬删除（Delete From）
+```python
+.first()  直接返回一行数据对象
+.all() 直接返回包含多条数据对象的列表
+.filter_by(a=b,x=y)只适用于等值查询，其参数为字典参数的传值方式
+.filter()适用于复杂查询条件的对比，其参数为条件运算
+查询过程中，可以使用db.session的方式进行查询（支持多表），也可以使用Model.query的方式进行查询（不支持多表），所以优先使用db.session
+ def find_user_by_id(self,userid):
+        row =db.session.query(Users).filter(Users.userid==userid).first()
+        return row
+```
+基础查询语句
+```python
+result=dbsession.query(Users).all()
+result = dbsession.query(Users.userid,Users.username).all()
+result = dbsession.query(Users).filter_by(userid=1,qq='11111111').all()
+result = dbsession.query(Users).filter(or_(Users.userid==1, Users.qq=='00')).all()
+# select *from users limit 3
+result = dbsession.query(Users).limit(3).all()
+#     select *from users limit 3,1 表示从3开始1条数据
+result = dbsession.query(Users).limit(1).offset(3).all()
+count=dbsession.query(Users).filter(Users.userid<4).count()
+# 去重复 select distinct(qq) from users
+result =dbsession.query(Users.qq).distinct(Users.qq).all()
+# 倒序
+result = dbsession.query(Users).order_by(Users.userid.desc()).all()
+# 模糊查询
+result = dbsession.query(Users).filter(Users.username.like('%w%')).all()
+# 分组,也可以去重 group by
+# result = dbsession.query(Users).group_by(Users.role).all()
+# result = dbsession.query(Users).group_by(Users.role).having(Users.userid>2).all()
+# 聚合函数 min,max,avg,sum
+result = dbsession.query(func.sum(Users.credit)).first()
+# > < == != in not
+
+print(count)
+print(result)
+# print(result[0].username)   #[<__main__.Users object at 0x7fb934b9e0d0>]
+
+```
+
