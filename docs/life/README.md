@@ -486,6 +486,51 @@ PC端的在移动端同样适用
 7. 比较数据类型以下6中情况是false，其他都是true------false、""、0、null、undefined、NaN
 8. 数据类型检测用typeof，对象类型检测用instanceof 9、异步加载第三方的内容 10、单行注释//，多行注释/**/
 
+### 判断数据类型的方式以及各自的优缺点
+一、typeof
+```javascript
+console.log(typeof 1);               // number
+console.log(typeof true);            // boolean
+console.log(typeof 'mc');           // string
+console.log(typeof function(){});    // function
+console.log(typeof []);              // object 
+console.log(typeof {});              // object
+console.log(typeof null);            // object
+console.log(typeof undefined);       // undefined
+
+```
+优点：能够快速区分基本数据类型
+缺点：不能将Object、Array和Null区分，都返回object
+
+二、instanceof
+```javascript
+console.log(1 instanceof Number);                    // false
+console.log(true instanceof Boolean);                // false 
+console.log('str' instanceof String);                // false  
+console.log([] instanceof Array);                    // true
+console.log(function(){} instanceof Function);       // true
+console.log({} instanceof Object);                   // true
+```
+优点：能够区分Array、Object和Function，适合用于判断自定义的类实例对象
+缺点：Number，Boolean，String基本数据类型不能判断
+三、Object.prototype.toString.call()
+```javascript
+var toString = Object.prototype.toString;
+ 
+console.log(toString.call(1));                      //[object Number]
+console.log(toString.call(true));                   //[object Boolean]
+console.log(toString.call('mc'));                  //[object String]
+console.log(toString.call([]));                     //[object Array]
+console.log(toString.call({}));                     //[object Object]
+console.log(toString.call(function(){}));           //[object Function]
+console.log(toString.call(undefined));              //[object Undefined]
+console.log(toString.call(null));                   //[object Null]
+```
+优点：精准判断数据类型
+缺点：写法繁琐不容易记，推荐进行封装后使用
+
+
+
 ### dom对象与jQuery对象转换
 dom转jQuery dom对象如下：
 var $dom = $(dom);
@@ -1108,12 +1153,108 @@ v-show 仅仅控制元素的显示方式，将 display 属性在 block 和 none 
 在内部追踪相关依赖，在属性被访问和修改时通知变化。 每个组件实例都有相应的watcher程序实例，它会在组件
 渲染的过程中把属性记录为依赖，之后当依赖项的setter被调用时，会通知watcher重新计算，从而致使它关联的组件得以更新。
 ![vue响应原理](/vueyl.jpg)
-### Vue中如何在组件内部实现一个双向数据绑定？
+### vue响应式更新机制及不使用框架实现简单的数据双向绑定问题
+vue是一款具有响应式更新机制的框架，既可以实现单向数据流也可以实现数据的双向绑定。
+
+1. 单向数据流与数据双向绑定
+ > 单向数据流是指model中的数据发生改变时引起view的改变。
+ > 双向数据绑定是指model中的数据发生改变时view的改变，view的改变也会引起model的改变。
+```javascript
+//这个是单向数据流，改变这个input的value值并不能是data中的text属性发生改变。
+<input type="text" :value="text">
+data:{
+  return {
+    text:'文本输入框'
+  }
+}
+//这个是双向数据绑定，无论是修改model还是修改view都能引起另一方的改变。
+<input type="text" v-model="text">
+data:{
+  return {
+    text:'文本输入框'
+  }
+}
+```
+2.  不使用vue实现数据双向绑定
+vue给我们提供了实现数据双向绑定的两种语法糖，分别v-model和.sync修饰符，v-model用于为表单元素提供数据双向绑定，.sync修饰符用于为任意属性提供数据双向绑定，接下来我们来尝试不使用vue提供的语法糖，自己实现数据双向绑定。
+要想view发生改变的时候引起model的改变首先要监听到view的改变，view发生改变时再去改变model，有了思路之后下面是代码实现。
+
+```javascript
+//首先通过input事件监听视图的改变
+<input type="text" :value="inputTitle" @input="onInput">
+data:{
+  return {
+    text:'文本输入框'
+  }
+},
+methods:{
+  //视图发生改变的时候，将视图的值赋予模型的值，实现数据双向绑定
+  onInput(event) {
+    this.text=event.target.value;
+  }
+}
+```
+### vue中的单向数据流实现原理
 
 原理：采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty（）来劫持各个属性的setter
 ，getter，在数据变动时发布消息给订阅者，触发相应监听回调。
 
-       假设有一个输入框组件，用户输入时，同步父组件页面中的数据。
+Object.defineProperty用于数据劫持，可以监听一个变量的读取与写入，并在发生读取与写入的时候执行回调函数
+Object.defineProperty(obj,prop,desc);
+obj是要定义的对象，prop是要定义的属性名，desc是属性的描述符
+```javascript
+//定义一个对象并监听他的text属性的存值操作与取值操作
+let data={};
+Object.defineProperty(data,'text',{
+  get() {
+    console.log('取值操作');
+  },
+  set(newVal) {
+    console.log('存值操作');
+  }
+});
+console.log('data');
+===>输出:
+===>{}
+===>取值操作
+data.text='文本输入框';
+===>输出
+===>存值操作
+```
+有了Object.defineProperty()这个API就可以监听model中数据的改变并在数据改变的时候修改视图达到单向数据流的效果。
+
+### 实现一个简易的数据双向绑定
+下面实现一个简易的数据双向绑定，目标是在修改view可以使model中的变量发生改变，修改model可以使视图发生改变。
+```javascript
+//html
+<div id="app">
+  <input type="text" id="input">
+</div>
+//js querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。
+let input = document.querySelector('#input');
+//定义model
+let data={
+  text:''
+};
+//监听model中text的变化，首先实现数据单向流
+Object.defineProperty(data,text,{
+  get() {
+  
+  }，
+  //text发生改变的时候，修改input元素的value值 
+  set(newVal) {
+    input.value=newVal;
+  }
+});
+//监听input元素的改变并修改model的值，实现数据双向绑定
+// addEventListener() 方法用于向指定元素添加事件句柄。
+input.addEventLisener('input',event=> {
+  data.text=event.target.value;
+});
+```
+至此就实现了简易的数据双向绑定，可以在控制台中修改data.text的值来查看视图是否发生改变，修改input元素的值在控制台中打印data.text查看model是否发生改变。
+
+### Vue中父子组件传值
 
 具体思路：父组件通过props传值给子组件，子组件通过 $emit 来通知父组件修改相应的props值，具体实现如下：
 
