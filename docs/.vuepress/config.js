@@ -6,6 +6,7 @@ module.exports = {
     head: [//注入到当前页的HTML<head>中的标签
         ['link', { rel: 'icon', href: '/logo.png' }],//增加一个自定义的favicon（网页标签图标）
     ],
+    base:'/vuepressglob/',
     themeConfig: {
         logo: '/logo.png',//左上角log
         nav: [//导航
